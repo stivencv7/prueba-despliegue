@@ -61,16 +61,16 @@ export const TransactioResume = ({
   }, []);
 
   return (
-    <div className="responsi-transaction-resume-main  2xl:w-full  2xl:h-[527px] flex flex-col gap-[32px] bg-red-400">
+    <div className="responsi-transaction-resume-main  2xl:w-full  h-full flex flex-col gap-[32px]">
       {continu == 1 && (
-        <div className="responsi-transaction-resume-main2 flex flex-col h-full gap-y-[12px] 2xl:gap-[22.74px]  max-lg:justify-between 2xl:justify-between ">
+        <div className="responsi-transaction-resume-main2 flex flex-col h-full gap-y-5  2xl:gap-[22.7392px]  max-lg:justify-between 2xl:justify-between bg-black">
 
           <h1 className="responsive-text text-[#EFF0F1] font-bold  leading-[20.8px]  xl:max-2xl:text-sm ">
             Transaction Resume
           </h1>
-          <div className="responsi-transaction-resume-content1 w-full h-[355px]  flex flex-col gap-[33px]  xl:max-2xl:gap-[20px] xl:max-2xl:h-full max-lg:h-[70%] bg ">
+          <div className="responsi-transaction-resume-content1 w-full h-[355px]  flex flex-col gap-y-[33px]  xl:max-2xl:justify-between xl:max-2xl:h-full max-lg:h-[70%]  ">
 
-            <div className="responsi-transaction-resume-content2 h-[264px] flex flex-col justify-between w-[100%] text-[16px]   xl:max-2xl:text-sm xl:max-2xl:h-[70%] ">
+            <div className="responsi-transaction-resume-content2 h-[264px] flex  flex-col justify-between w-[100%] text-[16px]   xl:max-2xl:text-sm xl:max-2xl:h-full  ">
               <div className="flex w-[100%] justify-between h-[21px]">
                 <p>{t("Vank.Transaction.VankPay.Send.Amount")} :</p>
                 <p className="text-[#FFED00]  leading-[20.8px] font-bold">
@@ -98,11 +98,11 @@ export const TransactioResume = ({
                 <p>{data?.TO_EMAIL}</p>
               </div>
 
-              <div className="responsi-transaction-resume-border h-[36px] pt-[24px] pb-[10px] border-b-[2px] border-[#3E4347] "></div>
+              <div className="responsi-transaction-resume-border   pb-[10px]  border-b-[2px] border-[#3E4347] "></div>
             </div>
 
-            <div className="flex items-center gap-x-5 transition-transform duration-500 w-full h-[42px]  mb-6">
-              <div className="flex items-center relative cursor-pointer">
+            <div className="flex items-center gap-x-5 transition-transform duration-500 w-full h-[42px]  mb-6 ">
+              <div className="flex items-center relative cursor-pointer ">
                 <Controller
                   render={({ field: { onChange, value, name } }) => (
                     <div className="flex items-center relative cursor-pointer">
@@ -127,7 +127,7 @@ export const TransactioResume = ({
                   control={control}
                 />
               </div>
-              <p className="responsive-text text-[16px] font-normal leading-[20.8px] xl:text-[15px]">
+              <p className="responsive-text text-[16px] font-normal leading-[20.8px] xl:text-[15px] ">
                 {t("Vank.Transaction.VankPay.Send.Resume.TermsAndConditions.textByClicking")}{" "}
                 <span className=" font-bold">{t("Vank.Transaction.VankPay.Send.Resume.TermsAndConditions.TextContinue")}</span>,{" "}{t("Vank.Transaction.VankPay.Send.Resume.TermsAndConditions.TextIAgree")}{" "}
                 <span className=" font-bold">{t("Vank.Transaction.VankPay.Send.Resume.TermsAndConditions.TextTerms")}</span>{" "} {t("Vank.Transaction.VankPay.Send.Resume.TermsAndConditions.And")}{" "}
@@ -136,12 +136,16 @@ export const TransactioResume = ({
             </div>
           </div>
 
+          <div className="">
           <FooterBtn
             history={`VankPay history  \u25BA`}
             onClik={() => setContinue(continu + 1)}
             onclickBack={back}
             disabled={!termsConditions}
           />
+          </div>
+
+        
         </div>
       )}
 

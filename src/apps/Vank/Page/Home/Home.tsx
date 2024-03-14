@@ -39,7 +39,7 @@ const Home = () => {
               }`}
             />
           ) : (
-            <SectionAccounts moreStyle={"opacity-0"} />
+            <SectionAccounts moreStyle={"opacity-0"} onclik={''}/>
           )}
           {value === 1 || value === 3 ? (
             <SectionCards onclik={()=>setValue(3)}
@@ -48,7 +48,7 @@ const Home = () => {
               }`}
             />
           ) : (
-            <SectionCards moreStyle={"opacity-0"} />
+            <SectionCards moreStyle={"opacity-0"} onclik={''}/>
           )}
           {value === 1 || value === 4 ? (
             <SectionCryto onclick={()=>setValue(4)}

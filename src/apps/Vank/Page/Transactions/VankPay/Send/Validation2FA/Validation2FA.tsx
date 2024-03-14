@@ -13,7 +13,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const length = 6;
 
-export const Validation2FA = ({ retur, back ,data}: { retur?: any; back?: any;data?:any }) => {
+export const Validation2FA = ({ retur, back, data }: { retur?: any; back?: any; data?: any }) => {
   //crea un nuevo array con una longitud especificada, lleno de cadenas vacías.
   const [otp, setOtp] = useState(new Array(length).fill(""));
 
@@ -115,16 +115,16 @@ export const Validation2FA = ({ retur, back ,data}: { retur?: any; back?: any;da
     }
   };
 
-  const onOtpSubmit = async() => {
-    
+  const onOtpSubmit = async () => {
+
     const isValid = otp?.every((digit) => !isNaN(digit) && digit !== "");
-    
+
     if (!isValid) {
       const newFieldValidity = otp.map(
         (digit) => !isNaN(digit) && digit !== ""
       );
       setFieldValidity(newFieldValidity);
- 
+
 
       return;
     }
@@ -133,11 +133,11 @@ export const Validation2FA = ({ retur, back ,data}: { retur?: any; back?: any;da
       if (otp.join("") !== code) {
         throw new Error("Codigo invalido");
       }
-      try{
-        const response=await transactionAssets(data);
+      try {
+        const response = await transactionAssets(data);
         setTransactionId(response?.body.tranId)
         setModal(true);
-      }catch(error:any){
+      } catch (error: any) {
         toast.error(error?.response?.data.body)
         setModal(false);
       }
@@ -176,9 +176,8 @@ export const Validation2FA = ({ retur, back ,data}: { retur?: any; back?: any;da
                 <li
                   key={index}
                   ref={(el) => ((tabsRef.current[index] as any) = el)}
-                  className={`flex justify-center items-center transition-all duration-300 xl:text-[14px] max-xl:text-[14px] max-2xl:text-[16px] 2xl:text-[16px] ${
-                    isActive ? `  text-white` : `text-link `
-                  } cursor-pointer rounded-full h-[7px] px-[10px]  text-base `}
+                  className={`flex justify-center items-center transition-all duration-300 xl:text-[14px] max-xl:text-[14px] max-2xl:text-[16px] 2xl:text-[16px] ${isActive ? `  text-white` : `text-link `
+                    } cursor-pointer rounded-full h-[7px] px-[10px]  text-base `}
                   onClick={() => setActiveTabIndex(index)}
                   onMouseDown={() => generateCode(index)}
                 >
@@ -215,9 +214,9 @@ export const Validation2FA = ({ retur, back ,data}: { retur?: any; back?: any;da
               <p className=" mb-5 w-[514px]  sm:text-base  text-[#EFF0F1] leading-[20.8px] max-2xl:text-[16px] max-xl:text-[14px]  2xl:text-[16px]">
                 {t("Auth.login.Otp.securityDigits")}
               </p>
-              
+
               <div className="relative flex flex-col w-full  mb-3">
-                { otp.join("") === code && <p className="absolute -top-8 z-50 right-3 text-[#FAE100] text-[15px] font-normal">valid ✓</p>}    
+                {otp.join("") === code && <p className="absolute -top-8 z-50 right-3 text-[#FAE100] text-[15px] font-normal">valid ✓</p>}
                 <CustomInputOtp
                   className="mb-4 w-full"
                   length={6}
@@ -229,7 +228,7 @@ export const Validation2FA = ({ retur, back ,data}: { retur?: any; back?: any;da
                 <div className="w-full flex justify-between items-center mb-4">
                   <div className="flex items-center justify-center gap-1">
                     <p className="text-right  text-[--text-body] text-[13px] sm:text-sm font-normal leading-[18.2px] cursor-pointer">
-                    {t("Vank.Transaction.VankPay.Send.2FAValidation.DescriptionNotReciveTheCode")}?
+                      {t("Vank.Transaction.VankPay.Send.2FAValidation.DescriptionNotReciveTheCode")}?
                     </p>
                     <InfoIcon
                       id="my-anchor-element"
@@ -251,22 +250,22 @@ export const Validation2FA = ({ retur, back ,data}: { retur?: any; back?: any;da
                       <div className="w-[320px] p-3">
                         <h2 className="mb-2">
 
-                        {t("Vank.Transaction.VankPay.Send.2FAValidation.Help.TextInfo")}:
-                         
+                          {t("Vank.Transaction.VankPay.Send.2FAValidation.Help.TextInfo")}:
+
                         </h2>
                         <ul className="list-disc flex flex-col items-center justify-center space-y-2">
                           <li className="list-color">
 
-                          {t("Vank.Transaction.VankPay.Send.2FAValidation.Help.TextPoint1")}.
+                            {t("Vank.Transaction.VankPay.Send.2FAValidation.Help.TextPoint1")}.
                           </li>
                           <li className="list-color">
-                          {t("Vank.Transaction.VankPay.Send.2FAValidation.Help.TextPoint2")}.
+                            {t("Vank.Transaction.VankPay.Send.2FAValidation.Help.TextPoint2")}.
                           </li>
                           <li className="list-color">
-                          {t("Vank.Transaction.VankPay.Send.2FAValidation.Help.TextPoint3")}.
+                            {t("Vank.Transaction.VankPay.Send.2FAValidation.Help.TextPoint3")}.
                           </li>
                           <li className="list-color">
-                          {t("Vank.Transaction.VankPay.Send.2FAValidation.Help.TextPoint4")}.
+                            {t("Vank.Transaction.VankPay.Send.2FAValidation.Help.TextPoint4")}.
                           </li>
                         </ul>
                       </div>
@@ -298,12 +297,12 @@ export const Validation2FA = ({ retur, back ,data}: { retur?: any; back?: any;da
 
               <div className="w-[275px] h-full flex flex-col justify-between pt-2">
                 <p className="font-normal text-[16px] leading-[20.8px]">
-                {t("Vank.Transaction.VankPay.Send.2FAValidation.Authy.TextOpenQR")}
+                  {t("Vank.Transaction.VankPay.Send.2FAValidation.Authy.TextOpenQR")}
                 </p>
 
                 <div className="h-[81px] flex flex-col justify-center items-start gap-[24px] text-[90%]">
                   <p className=" ">
-                  {t("Vank.Transaction.VankPay.Send.2FAValidation.Authy.TextExpires")}
+                    {t("Vank.Transaction.VankPay.Send.2FAValidation.Authy.TextExpires")}
                   </p>
                   {t("Vank.Transaction.VankPay.Send.2FAValidation.Authy.TextProblemsQR")}
                 </div>
@@ -313,12 +312,16 @@ export const Validation2FA = ({ retur, back ,data}: { retur?: any; back?: any;da
 
           {/* </div> */}
         </div>
-        <FooterBtn
-          onClik={() => onOtpSubmit()}
-          onclickBack={back}
-          history={`VankPay history  \u25BA`}
-          disabled={otp.join("").length!=6}
-        />
+
+        <div>
+          <FooterBtn
+            onClik={() => onOtpSubmit()}
+            onclickBack={back}
+            history={`VankPay history  \u25BA`}
+            disabled={otp.join("").length != 6}
+          />
+        </div>
+
       </div>
       {/**si modal es true no permite ver la venta modal*/}
       {modal && (
@@ -329,7 +332,7 @@ export const Validation2FA = ({ retur, back ,data}: { retur?: any; back?: any;da
             monto={data?.AMOUNT}
             data={data}
             transactionId={transactionId}
-            
+
           />
           <div className="h-[100%] absolute top-0 bg-[#14181F99] w-[100%]"></div>
         </>

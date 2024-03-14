@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import { findById, etUserField, } from "../../../../../service/ServiceTransaction/ServiceTransaction";
 import { CustomSelect } from "./CustomSelect/CustomSelect";
-import { Controller,useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 // import { date } from "zod";
 // import { transactionAssets } from "../../../../../service/ServiceVankPay/ServiceVanPay";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -36,7 +36,7 @@ const schema = z.object({
 });
 
 export const Send = ({ onClickHistorial }: { onClickHistorial?: any }) => {
-  
+
   const [t, i18n] = useTranslation("global");
   const [beneficiary, setBeneficiary] = useState("");
   const [contine, setContinue] = useState(1);
@@ -106,7 +106,7 @@ export const Send = ({ onClickHistorial }: { onClickHistorial?: any }) => {
   }, [amount]);
 
   //Manejar el valor del amount y su validacion
-  const handleChangeAmount = (event:any) => {
+  const handleChangeAmount = (event: any) => {
 
     let newValue = event.target.value;
     if (/^\d*\.?\d*$/.test(newValue) || newValue === '') {
@@ -135,7 +135,7 @@ export const Send = ({ onClickHistorial }: { onClickHistorial?: any }) => {
 
 
       // const response=await transactionAssets(transactionAsset);
-      
+
       setDataResumen(transactionAsset);
       //toast.success("Transaction ID "+response?.body.tranId) //nos trae el id de la transaction
       setContinue(contine + 1)
@@ -156,10 +156,10 @@ export const Send = ({ onClickHistorial }: { onClickHistorial?: any }) => {
       {contine == 1 && (
 
 
-        <div className="transaction-send w-full   h-[527px] flex flex-col justify-between relative  max-lg:h-full  overflow-hidden">
+        <div className="transaction-send w-full   h-[527px] flex flex-col justify-between relative   max-lg:h-full   overflow-hidden">
 
-          <div className="transaction-send-content2 w-[100%] h-[392px]  flex flex-col  gap-[32px] xl:max-2xl:gap-0 xl:max-2xl:justify-between  xl:max-2xl:h-[342px] max-sm: max-lg:justify-between max-lg:h-[80%]">
-            <div className="w-[100%] h-[65px]  flex justify-between">
+          <div className="transaction-send-content2 w-[100%] h-[392px]  flex flex-col gap-y-[32px] xl:max-2xl:gap-y-0 xl:max-2xl:justify-between  xl:max-2xl:h-full max-sm: max-lg:justify-between max-lg:h-[80%]">
+            <div className="w-[100%] h-[65px]  flex justify-between ">
               <CustomSelect data={user} label={'Choose account or wallet'} />
               <div className="w-[259px] flex flex-col gap-y-[2px]">
                 <span className="text-sm sm:text-base font-normal text-[--text-body] xl:text-[14px] 2xl:text-[16px]">
@@ -221,7 +221,7 @@ export const Send = ({ onClickHistorial }: { onClickHistorial?: any }) => {
                   {t("Vank.Transaction.VankPay.Send.VankID")}
                 </span>
               </div>
-              
+
               <Controller
                 render={({ field: { onChange, value, name } }) => (
                   <CustomInput
@@ -294,12 +294,12 @@ export const Send = ({ onClickHistorial }: { onClickHistorial?: any }) => {
                 {t("Vank.Transaction.VankPay.Send.Description")}
               </span> */}
 
-              <CustomTextArea 
-              classNameLabel={"xl:max-2xl:text-[14px]"}
-              label={t("Vank.Transaction.VankPay.Send.Description")}
-              classNameTextArea={'h-[103px] xl:max-2xl:h-[70%]'}
-              value={description}
-              onChange={(e:any)=>setDescription(e.target.value)}
+              <CustomTextArea
+                classNameLabel={"xl:max-2xl:text-[14px]"}
+                label={t("Vank.Transaction.VankPay.Send.Description")}
+                classNameTextArea={'h-[103px] xl:max-2xl:h-[70%]'}
+                value={description}
+                onChange={(e: any) => setDescription(e.target.value)}
               />
 
               {/* <input
@@ -314,13 +314,16 @@ export const Send = ({ onClickHistorial }: { onClickHistorial?: any }) => {
 
             </div>
           </div>
-          <FooterBtn
-            history={`VankPay history  \u25BA`}
-            onClickHistory={onClickHistorial}
-            onClik={() => handleChangeData()}
-            onclickBack={() => setContinue(1)}
-            disabled={toEmail?.length <= 0 || beneficiary.length <= 0 || !isValid}
-          />
+          <div>
+            <FooterBtn
+              history={`VankPay history  \u25BA`}
+              onClickHistory={onClickHistorial}
+              onClik={() => handleChangeData()}
+              onclickBack={() => setContinue(1)}
+              disabled={toEmail?.length <= 0 || beneficiary.length <= 0 || !isValid}
+            />
+          </div>
+
         </div>
       )}
 
@@ -338,7 +341,7 @@ export const Send = ({ onClickHistorial }: { onClickHistorial?: any }) => {
 
         />
       )}
-      
+
     </>
 
   );

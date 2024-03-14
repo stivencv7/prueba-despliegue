@@ -14,7 +14,7 @@ export const FooterBtn = ({
   onClickHistory?: any;
 }) => {
   return (
-    <div className="transaction-footer-btn w-full h-[87px] pt-[10px] flex flex-col justify-between items-end ">
+    <div className="transaction-footer-btn w-full h-[87px] pt-2 flex flex-col justify-between items-end  ">
       <div className="w-full flex justify-between lg:gap-x-4">
         <CustomButton
           label={"Back"}
@@ -34,7 +34,7 @@ export const FooterBtn = ({
       <CustomButton
         onclick={onClickHistory}
         label={
-          <span className="text-[#9D9DA2] font-normal  text-[16px] leading-[20.8px]">
+          <span className="text-[#9D9DA2] font-normal  text-[16px] leading-[20.8px] xl:max-2xl:text-[14px]">
             {history}
           </span>
         }
