@@ -1,0 +1,10 @@
+.select::-webkit-scrollbar {
+  width: 7px;
+  border-radius: 1px;
+}
+
+.select::-webkit-scrollbar-thumb {
+  height: 8px;
+  padding: 122px;
+  background: var(--text-body-light-grey);
+}

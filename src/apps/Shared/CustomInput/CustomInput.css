@@ -1,0 +1,25 @@
+.input {
+    @apply w-full pt-[11px] pb-[13px] pr-[30px] pl-[13px] rounded-[10px];
+}
+
+@keyframes vibrate {
+    0% {
+        transform: translateX(0) scale(1.20);
+    }
+    25% {
+        transform: translateX(-1px) scale(1.20);
+    }
+    50% {
+        transform: translateX(0) scale(1.20);
+    }
+    75% {
+        transform: translateX(1px) scale(1.20);
+    }
+    100% {
+        transform: translateX(0) scale(1.20);
+    }
+}
+
+.animate-vibrate {
+    animation: vibrate 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+}

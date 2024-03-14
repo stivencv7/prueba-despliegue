@@ -1,0 +1,214 @@
+{
+  "common": {
+    "commonLanguaje": {
+      "languaje": "Idioma",
+      "search": "Buscar"
+    }
+  },
+  "Auth": {
+    "login": {
+      "emailTeleLabel": "Correo electrónico o teléfono",
+      "passwordLabel": "Contraseña",
+      "loginButton": "Iniciar sesión",
+      "newUserPrompt": "¿Es nuevo en la plataforma? ",
+      "createAccount": "Crear una cuenta",
+      "ForgotPassword": "¿Ha olvidado su contraseña?",
+      "changeLanguage": "Cambiar el idioma a",
+      "language": "Ingles",
+      "Otp": {
+        "back": "Atras",
+        "title": "Validación 2FA ",
+        "nav": {
+          "email": "correo electrónico",
+          "phone": "Número de teléfono",
+          "authy": "Authy"
+        },
+        "thecodebesend": "El código se enviará a",
+        "securityDigits": "Escriba los 6 dígitos de seguridad",
+        "resend": "Reenviar en",
+        "resendCode": "Reenviar código",
+        "didnotCode": "¿No ha recibido el código?",
+        "OtpButton": "Continuar"
+      }
+    },
+    "register": {
+      "emailLabel": "Correo",
+      "sendConfirmationCode": {
+        "WeWillSendYouA": "Le enviaremos un",
+        "code": "código",
+        "toYour": "a su",
+        "email": "correo electrónico ",
+        "toConfirm": "para confirmar"
+      },
+      "opt": {
+        "back": "Atras",
+        "emailVerification": "Verificación del correo electrónico",
+        "InfoCode": {
+          "info": "Introduzca el código de verificación de 6 dígitos enviado a",
+          "code": "el código es válido durante 30 minutos."
+        },
+        "resend": "Reenviar en",
+        "resendCode": "Reenviar código",
+        "didnotCode": "¿No ha recibido el código?"
+      },
+      "createPassword": {
+        "setPassword": "Establecer contraseña de usuario",
+        "password": {
+          "labelPassword": "Contraseña",
+          "placeholder": "Introducir contraseña"
+        },
+        "confirmPassword": {
+          "labelPassword": "Confirmar contraseña",
+          "placeholder": "Confirmar contraseña"
+        },
+        "rules": {
+          "one": "Al menos 8 caracteres",
+          "two": "Al menos 1 número",
+          "three": "Al menos 1 letra mayúscula",
+          "four": "Las contraseñas deben coincidir"
+        },
+        "resend": "Reenviar en",
+        "resendCode": "Reenviar código",
+        "didnotCode": "¿No ha recibido el código?"
+      },
+      "passwordLabel": "Contraseña",
+      "newUserPrompt": "¿ya tienes una cuenta? ",
+      "createAccount": "Inicia sesión",
+      "registerButton": "Continue",
+      "buttonContinue": "Continuar",
+      "button": "Registrar"
+    },
+    "common": {
+      "welcome": "¡Bienvenido a Vank! 👋",
+      "joinPlatform": {
+        "joinToThe": "Únete a la",
+        "bestPlatform": "mejor plataforma",
+        "to": "to",
+        "save": "ahorrar",
+        "and": "y",
+        "send": "enviar",
+        "your": "su",
+        "money": "dinero"
+      }
+    }
+  },
+  "Vank": {
+    "Home": {
+      "nav": {
+        "btnResumen": "Resumen",
+        "btnAccount": "Cuenta",
+        "btnCards": "Carta",
+        "btnWallets": "Carteras",
+        "amountInfo": "Saldo total"
+      },
+      "AccountInfo": {
+        "account": "cuenta",
+        "usdSavings": "Ahorro en USD"
+      },
+      "CardsInfo": {
+        "myCard": "mi tarjeta"
+      },
+      "CryptoInfo": {
+        "tether": "Atadura",
+        "ethereum": "",
+        "bitcoin": ""
+      }
+    },
+    "VankPay":{
+      "Send":{
+        "ChooseAccount":"Elija cuenta o monedero",
+        "Account":"Cuenta",
+        "Available":"Disponible",
+        "Amount":"Importe",
+        "Email":"Correo electrónico",
+        "Phone":"Teléfono",
+        "VankID":"Vank ID",
+        "Beneficiary":"Beneficiario",
+        "Description":"Descripción",
+        
+        "Resume":{
+          "Amount":"Importe",
+          "BeneficiaryName":"Nombre del beneficiario",
+          "SendingFrom":"Envío desde",
+          "VankID":"Vank ID",
+          "PhoneNumber":"Número de teléfono",
+          "BeneficiaryEmail":"Correo electrónico del beneficiario",
+          "TermsAndConditions":{
+            "textByClicking":"Al hacer clic en",
+            "TextContinue":" Continuar",
+            "TextIAgree":"acepto los",
+            "TextTerms":"términos",
+            "And":"y",
+            "Conditions":"condiciones"
+
+          }
+        },
+       
+        "2FAValidation":{
+          "Title":"Validación 2FA",
+          "Email":"Correo electrónico",
+          "PhoneNumber":"Número de teléfono",
+          "TextViaPhone":"El código se enviará a través de",
+          "Authy":{
+            "Authy":"Authy",
+            "TextOpenQR":"Abra su aplicación Authy y escanee el código QR",
+            "TextExpires":"El código caduca en 5:00 min",
+            "TextProblemsQR":"Problemas al escanear QR"
+           
+          },
+          "DescriptionTypeValidation":"El código se enviará a",
+          "DescriptionNumberDigits":"Escriba los 6 dígitos de seguridad",
+          "DescriptionNotReciveTheCode":"No recibió el código",
+          "ResendCode":"Reenviar código",
+          
+          "Help":{
+            "TextInfo":"Al buscar el correo electrónico de verificación de inicio de sesión en su buzón de correo electrónico",
+            "TextPoint1":"Utilice palabras clave como \"verificación\" o \"inicio de sesión\" para realizar búsquedas eficaces.",
+            "TextPoint2":"Comprueba tu carpeta de spam o correo no deseado para asegurarte de que no está mal clasificado",
+            "TextPoint3":"Ordenar los correos electrónicos por fecha para localizar rápidamente el último correo electrónico de verificación",
+            "TextPoint4":"Comprobar todas las carpetas, incluida la bandeja de entrada y las carpetas personalizadas"
+          }
+
+        },
+
+        "Modal":{
+            "LoadingSend":{
+                "LoadingSend":"Enviar VannkPay",
+                "LoadingDescription":"Cada transacción se beneficia de protocolos de seguridad líderes en el sector"
+            },
+            "SentSuccesFully":{
+              "SentSuccesFully":"Vankpay enviado con éxito",
+              "DescriptionSentSuccesFully":"Su transacción está siendo sometida a un proceso de validación de seguridad. Puede tardar un par de minutos"
+            },
+            "Btns":{
+              "BtnFinish":"Finalizar transacción",
+              "ViewTransaction":"Ver transacción",
+              "DownloadResume":"Descargar currículum"
+            },
+            "ViewDescriptionTransaction":{
+              "Date":"Fecha",
+              "AmountSent":"Importe enviado",
+              "SentFrom":"Enviado desde",
+              "VankID":"Vank ID",
+              "PhoneNumber":"Número de teléfono",
+              "BeneficiaryEmail":"Beneficiary Email"
+            }
+        }
+      }
+      
+
+    }
+  },
+  "Share": {
+    "Sidebar": {
+      "Home": "Inicio",
+      "Transaction": "Transacción",
+      "Beneficiaries": "Beneficiarios",
+      "Share": "Compartir la app",
+      "Accessibility": "Accesibilidad",
+      "BtnLanguage": "Idioma",
+      "BtnLogOut": "Salir",
+      "Info": "No comparta su código de Google Authentificator o SMS con nadie, incluido el personal de atención al cliente de Qoripay."
+    }
+  }
+}

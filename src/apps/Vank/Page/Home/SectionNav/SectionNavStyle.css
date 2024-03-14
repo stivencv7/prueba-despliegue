@@ -1,0 +1,115 @@
+.nav-container {
+    
+    /* display: flex;
+    justify-content: space-between;
+    
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    position: relative;
+    width: 500px; */
+    
+    position: relative;
+    
+  }
+  
+  .nav-container .nav-item {
+    /* color: #999;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 2; */
+  }
+  
+  .nav-container .nav-item-highlighter {
+    width: 40px  ;
+    height: 55%;
+    border-bottom:1px solid #FFED00 ;
+    text-shadow: 0px 0px 20px #FFED00;
+    position: absolute;
+    top: 80%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
+    visibility: hidden;
+    transition: left 1s;
+  }
+  
+  .nav-container .nav-item.active {
+    color: #FFED00;
+    transition: left 0.1s ease-in-out
+  }
+  
+  .nav-container .nav-item.active ~ .nav-item-highlighter {
+    visibility: visible;
+  }
+  
+  .nav-container .nav-item.active.item-0 ~ .nav-item-highlighter {
+    left: 10.5%;
+    transition: left 0.2s ease-in-out
+  }
+  
+  .nav-container .nav-item.active.item-1 ~ .nav-item-highlighter {
+    left: 42%;
+    transition: left 0.2s ease-in-out
+  }
+  
+  .nav-container .nav-item.active.item-2 ~ .nav-item-highlighter {
+    left: 68%;
+    transition: left 0.2s ease-in-out
+  }
+  
+  .nav-container .nav-item.active.item-3 ~ .nav-item-highlighter {
+    left: 91%;
+    transition: left 0.2s ease-in-out
+  }
+
+  
+  .nav-container .nav-item .fas,
+  .nav-container .nav-item .far {
+    transform: translateX(15px);
+    margin-right: 10px;
+    transition: transform 0.25s;
+  }
+  
+  .nav-container .nav-item.active .fas,
+  .nav-container .nav-item.active .far {
+    margin-right: 10px;
+    transform: translateX(0px);
+  }
+  
+  .nav-container .nav-item .nav-item-text {
+    /* opacity:;
+    visibility: hidden;
+    transition: opacity 0.25s; */
+    
+  }
+  
+  .nav-container .nav-item.active .nav-item-text {
+    visibility: visible;
+    opacity: 1;
+  }
+
+@media screen and  (max-width:666px){
+    .nav-container .nav-item.active.item-0 ~ .nav-item-highlighter {
+        left: 16.5%;
+        transition: left 0.3s ease-in-out
+      }
+      
+      .nav-container .nav-item.active.item-1 ~ .nav-item-highlighter {
+        left: 1%;
+        transition: left 0.3s ease-in-out
+      }
+      
+      .nav-container .nav-item.active.item-2 ~ .nav-item-highlighter {
+        left: 79%;
+        transition: left 0.3s ease-in-out
+      }
+      
+      .nav-container .nav-item.active.item-3 ~ .nav-item-highlighter {
+        left: 106%;
+        transition: left 0.3s ease-in-out
+      }
+    
+        
+}
+  

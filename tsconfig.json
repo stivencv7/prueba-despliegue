@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "target": "ES2020", //Esta opción especifica la versión de ECMAScript hacia la cual se compilará el código TypeScript. En este caso, el código se compilará a ECMAScript 2020.
+    "useDefineForClassFields": true, // Habilita el uso de la palabra clave define para la declaración de campos de clase en TypeScript.
+    "lib": ["ES2020", "DOM", "DOM.Iterable"], //Especifica las bibliotecas incorporadas que estarán disponibles en tiempo de ejecución. En este caso, se incluyen las bibliotecas de ECMAScript 2020, el DOM y DOM.Iterable.
+    "module": "ESNext", // Indica qué tipo de módulos se generan en el código compilado. En este caso, se está utilizando ESNext, que permite el uso de las últimas características de JavaScript.
+    "outDir": "dist",
+    "skipLibCheck": false, //Opción que indica si se deben omitir las comprobaciones de biblioteca al compilar. Puede ayudar a acelerar el proceso de compilación.
+    "types": ["reflect-metadata"], //Lista los tipos de declaración que se incluirán en el proceso de compilación. En este caso, se incluye reflect-metadata, que es un tipo de declaración para la biblioteca reflect-metadata.
+    "emitDecoratorMetadata": true, // Habilita la emisión de metadatos de decoradores para ser utilizados en tiempo de ejecución.
+    "experimentalDecorators": true, //Habilita la funcionalidad de decoradores experimentales en TypeScript.
+    "baseUrl": "./", // Establece la ruta base para la resolución de módulos. En este caso, la resolución de módulos comenzará desde el directorio actual.
+    "paths": {
+      //  Define alias de ruta de módulo personalizados para simplificar las importaciones de módulos.
+      "@/*": ["./src/*"],
+      "@ioc/*": ["./src/inversify/*"],
+      "@apps/*": ["./src/apps/*"],
+      "@shared/*": ["src/apps/Shared/*"],
+      // "@theme/*": ["./src/apps/Shared/Theme/*"],
+      // "@contexts/*": ["./src/Contexts/*"],
+      "@assets/*": ["./src/assets/*"]
+    },
+
+    /* Bundler mode */
+    "moduleResolution": "bundler", // Especifica el algoritmo de resolución de módulos a utilizar. En este caso, se está utilizando un algoritmo de resolución de módulos basado en un "bundler" (empaquetador).
+    "allowImportingTsExtensions": true, // Habilita la importación de archivos TypeScript (*.ts) en lugar de archivos JavaScript (*.js) directamente.
+    "resolveJsonModule": true, //Habilita la resolución de módulos para archivos JSON.
+    "isolatedModules": true, // Habilita la compilación independiente de módulos, lo que permite la generación de archivos .d.ts para cada módulo.
+    "noEmit": true, //Evita la emisión de archivos JavaScript durante el proceso de compilación.
+    "jsx": "react-jsx", // Especifica el tipo de JSX a utilizar. En este caso, se está utilizando react-jsx, que es el tipo de JSX compatible con React.
+    "esModuleInterop": true,
+
+
+
+    /* Linting */
+    "strict": true, //Habilita o deshabilita el modo estricto de TypeScript, que aplica un conjunto de reglas de lenguaje más estrictas.
+    "noImplicitAny": false, //Habilita o deshabilita la inferencia de tipo implícita en TypeScript.
+    "noUnusedLocals": false, //Muestra una advertencia si se declaran variables locales que nunca se utilizan.
+    "noUnusedParameters": false, //Muestra una advertencia si se declaran parámetros de función que nunca se utilizan.
+    "noFallthroughCasesInSwitch": true //Muestra una advertencia si se encuentran casos de "fallthrough" (caída a través) en declaraciones switch.
+  },
+  "include": ["src"], //Especifica qué archivos y directorios deben ser incluidos en el proceso de compilación. En este caso, se incluyen los directorios src y tests, así como el archivo
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

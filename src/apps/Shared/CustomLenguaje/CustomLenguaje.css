@@ -1,0 +1,22 @@
+/* Estilo básico para el scrollbar */
+.overflow-y-auto::-webkit-scrollbar {
+    width: 0px;
+    border-radius: 33px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+    background-color: #4f4f4f;
+    border-radius: 33px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+    border-radius: 43px;
+    background-color: #ccc;
+    
+}
+
+/* Para Firefox */
+.overflow-y-autos {
+    scrollbar-width: thin;
+    scrollbar-color: #4f4f4f #ccc;
+}

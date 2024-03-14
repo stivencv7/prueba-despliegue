@@ -1,0 +1,3 @@
+.list-color::marker {
+  color: var(--yellow); /* Cambia el color del punto a amarillo */
+}

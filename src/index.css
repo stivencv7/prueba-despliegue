@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import "@fontsource/roboto/300.css";
+@import "@fontsource/roboto/400.css";
+@import "@fontsource/roboto/500.css";
+@import "@fontsource/roboto/700.css"; */
+
+@font-face {
+  font-family: "PP Object Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: url("./assets/font/PPObjectSans/PPObjectSans-Thin.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "PP Object Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/font/PPObjectSans/PPObjectSans-Regular.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "PP Object Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./assets/font/PPObjectSans/PPObjectSans-Regular.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "PP Object Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./assets/font/PPObjectSans/PPObjectSans-Bold.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "PP Object Sans";
+  font-style: normal;
+  font-weight: 800;
+  src: url("./assets/font/PPObjectSans/PPObjectSans-Heavy.ttf")
+    format("truetype");
+}
+
+body {
+  font-family: "PP Object Sans", sans-serif;
+}
+
+:root {
+  --background-dark-blue: #14181f;
+  --background-soft-blue: #191e25;
+  --text-body: #eff0f1;
+  --text-light-body: #b8b8b8;
+  --yellow: #ffed00;
+  --yellow-disabled: #dfcf41;
+  --yellow-disabled: #d6ca5c;
+  --light-grey: #5e6061;
+  --dark-gray: #3e4347;
+  --text-body-light-grey: #9d9da2;
+}
+
+.list-color::marker {
+  color: var(--yellow); /* Cambia el color del punto a amarillo */
+}
+
+nav a:hover,
+nav a.active {
+  color: #ffed00;
+}
+
+nav a:focus,
+nav a.active {
+  width: 227px;
+  position: relative;
+  z-index: 50000;
+  border-right: 6px solid #ffed00;
+
+  /* background: red; */
+}

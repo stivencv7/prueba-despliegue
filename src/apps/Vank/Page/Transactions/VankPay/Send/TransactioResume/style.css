@@ -1,0 +1,22 @@
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    background: #3E4347;
+    border-radius: 4px;
+    padding: 1px 4px 3px 4px;
+   
+    outline: none;
+  }
+  
+  /* Estilo del chulito */
+  input[type="checkbox"]:checked::before {
+    content: '\2713'; /* Unicode para el símbolo de check */
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+    color: yellow; /* Color amarillo */
+  }

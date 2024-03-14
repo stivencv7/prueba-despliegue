@@ -1,0 +1,8 @@
+.switch[data-isOn="true"] {
+  justify-content: flex-end;
+}
+
+.handle {
+  background-color: white;
+  border-radius: 40px;
+}

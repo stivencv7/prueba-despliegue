@@ -1,0 +1,53 @@
+image: node:lts
+
+stages:
+  - build
+  - test
+  - deploy
+    
+#cache:
+#  key: modules
+#  paths:
+#  - node_modules/
+
+#Branch less than 24 Hrs:
+#  stage: build
+#  allow_failure: true
+#  tags:
+#    - aws
+#  image:
+#    name: alpine/git
+#    entrypoint: [""]
+#  script:
+#    - CI-CD/branch_is_less_than_24_hours.sh
+
+
+#Unit tests:
+#  tags:
+#    - aws
+#  stage: test
+#  script:
+#    - npm install
+#    - npm test
+
+Deploy Dev:
+  stage: deploy
+  tags:
+    - aws 
+  script:
+    - npm i &&  npm run build && ls && aws s3 sync dist/ s3://dev-frontend-deploy
+    - cat dragon.txt
+  environment: dev
+
+#Deploy Prod:
+#  only:
+#    refs:
+#      - main
+#  tags:
+#    - aws   
+#  stage: deploy
+#  when: manual  
+#  script:
+#    - npm i &&  npm run build && ls && aws s3 sync dist/ s3://dev-frontend-deploy
+#    - cat dragon.txt
+#  environment: dev

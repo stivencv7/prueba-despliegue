@@ -1,0 +1,11 @@
+import React from "react";
+
+const Us = ({ className, fill }) => {
+  return (
+<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 16.62H16V0.62H0V16.62Z" fill="white"/>
+</svg>
+  );
+};
+
+export default Us;
