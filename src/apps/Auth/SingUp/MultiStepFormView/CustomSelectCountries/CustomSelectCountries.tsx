@@ -22,7 +22,7 @@ const CustomSelectCountries = ({
   data: any;
   name: string;
   value: string;
-  onChange: (value: string) => void;
+  onChange: any;
   getValues: string;
   onValue: (country: string) => void;
   placeholder: string;

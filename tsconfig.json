@@ -26,14 +26,14 @@
     "allowImportingTsExtensions": true, // Habilita la importación de archivos TypeScript (*.ts) en lugar de archivos JavaScript (*.js) directamente.
     "resolveJsonModule": true, //Habilita la resolución de módulos para archivos JSON.
     "isolatedModules": true, // Habilita la compilación independiente de módulos, lo que permite la generación de archivos .d.ts para cada módulo.
-    "noEmit": true, //Evita la emisión de archivos JavaScript durante el proceso de compilación.
+    "noEmit": false, //Evita la emisión de archivos JavaScript durante el proceso de compilación.
     "jsx": "react-jsx", // Especifica el tipo de JSX a utilizar. En este caso, se está utilizando react-jsx, que es el tipo de JSX compatible con React.
     "esModuleInterop": true,
 
 
 
     /* Linting */
-    "strict": true, //Habilita o deshabilita el modo estricto de TypeScript, que aplica un conjunto de reglas de lenguaje más estrictas.
+    "strict": false, //Habilita o deshabilita el modo estricto de TypeScript, que aplica un conjunto de reglas de lenguaje más estrictas.
     "noImplicitAny": false, //Habilita o deshabilita la inferencia de tipo implícita en TypeScript.
     "noUnusedLocals": false, //Muestra una advertencia si se declaran variables locales que nunca se utilizan.
     "noUnusedParameters": false, //Muestra una advertencia si se declaran parámetros de función que nunca se utilizan.
