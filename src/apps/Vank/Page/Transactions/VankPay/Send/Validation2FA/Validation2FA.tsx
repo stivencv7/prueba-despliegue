@@ -156,10 +156,13 @@ export const Validation2FA = ({ retur, back, data }: { retur?: any; back?: any; 
   //Referencia mutable para las pestañas.
   const tabsRef = useRef([]);
   return (
-    <div className="responsi-transaction-2fa flex flex-col  h-[527px] items-center justify-center max-2xl:h-full ">
-      <div className="responsi-transaction-2fa-contnt1 w-full flex flex-col 2xl:gap-[27px]  max-lg:h-full max-lg:justify-between 2xl:justify-between ">
-        <div className="responsi-transaction-2fa-contnt2 w-full 2xl:h-[410px] flex flex-col justify-between max-2xl:max-2xl:h-[330px] max-lg:h-[80%] ">
-          <h1 className="font-bold text-[18px] xl:text-[18px]"> {t("Vank.Transaction.VankPay.Send.2FAValidation.Title")}</h1>
+    <div className={`responsi-transaction-2fa flex flex-col  h-full   ${modal ? 'items-center justify-center' : ''}`}>
+
+      <div className="responsi-transaction-2fa-contnt1 w-full flex flex-col 2xl:gap-[27px] h-full max-lg:justify-between 2xl:justify-between   " >
+
+        <div className="responsi-transaction-2fa-contnt2 w-full 2xl:h-[410px] flex flex-col justify-between max-2xl:max-2xl:h-full max-lg:h-[80%] gap-y-4">
+
+          <h1 className="font-bold text-[18px] xl:text-[18px] xl:max-2xl:text-[16px]"> {t("Vank.Transaction.VankPay.Send.2FAValidation.Title")}</h1>
 
           <ul className="flew-row relative 2xl:h-[36px] flex items-center gap-4 w-full  max-2xl:max-2xl:h-[2.25rem]  mb-4">
             <span
@@ -176,7 +179,7 @@ export const Validation2FA = ({ retur, back, data }: { retur?: any; back?: any; 
                 <li
                   key={index}
                   ref={(el) => ((tabsRef.current[index] as any) = el)}
-                  className={`flex justify-center items-center transition-all duration-300 xl:text-[14px] max-xl:text-[14px] max-2xl:text-[16px] 2xl:text-[16px] ${isActive ? `  text-white` : `text-link `
+                  className={`flex justify-center items-center transition-all duration-300 xl:text-[14px] max-xl:text-[14px] max-2xl:text-[16px] 2xl:text-[16px] xl:max-2xl:text-[13px] ${isActive ? `  text-white` : `text-link `
                     } cursor-pointer rounded-full h-[7px] px-[10px]  text-base `}
                   onClick={() => setActiveTabIndex(index)}
                   onMouseDown={() => generateCode(index)}
@@ -186,130 +189,138 @@ export const Validation2FA = ({ retur, back, data }: { retur?: any; back?: any; 
               );
             })}
           </ul>
-
-          {activeTabIndex != 2 ? (
-            <>
-              <p className=" space-y-7 mb-5 w-full sm:w-[514px]  sm:text-base text-[#EFF0F1] leading-[20.8px] max-2xl:text-[16px] max-xl:text-[14px]  2xl:text-[16px]">
-                {activeTabIndex == 0 && (
-                  <>
-                    {t("Auth.login.Otp.thecodebesend")}{" "}
-                    <span className="text-[#FAE100]">
-                      {" "}
-                      vank******@*****.com
-                    </span>
-                  </>
-                )}
-
-                {activeTabIndex == 1 && (
-                  <>
-                    {t("Vank.Transaction.VankPay.Send.2FAValidation.TextViaPhone")}
-                    <span className="text-body font-bold ">
-                      {" "}
-                      SMS to +1 *** *** *465
-                    </span>
-                  </>
-                )}
-              </p>
-
-              <p className=" mb-5 w-[514px]  sm:text-base  text-[#EFF0F1] leading-[20.8px] max-2xl:text-[16px] max-xl:text-[14px]  2xl:text-[16px]">
-                {t("Auth.login.Otp.securityDigits")}
-              </p>
-
-              <div className="relative flex flex-col w-full  mb-3">
-                {otp.join("") === code && <p className="absolute -top-8 z-50 right-3 text-[#FAE100] text-[15px] font-normal">valid ✓</p>}
-                <CustomInputOtp
-                  className="mb-4 w-full"
-                  length={6}
-                  otp={otp}
-                  setOtp={setOtp}
-                  fieldValidity={fieldValidity}
-                  setFieldValidity={setFieldValidity}
-                />
-                <div className="w-full flex justify-between items-center mb-4">
-                  <div className="flex items-center justify-center gap-1">
-                    <p className="text-right  text-[--text-body] text-[13px] sm:text-sm font-normal leading-[18.2px] cursor-pointer">
-                      {t("Vank.Transaction.VankPay.Send.2FAValidation.DescriptionNotReciveTheCode")}?
-                    </p>
-                    <InfoIcon
-                      id="my-anchor-element"
-                      className="cursor-pointer"
-                    />
-                    <CustomTooltip
-                      anchorSelect="#my-anchor-element"
-                      place="right"
-                      style={{
-                        backgroundColor: "var(--dark-gray)",
-                        color: "#fff",
-                        padding: "10px",
-                        borderRadius: "5px",
-                        opacity: 1,
-                        border: "2px solid #fff",
-                        zIndex: 1,
-                      }}
-                    >
-                      <div className="w-[320px] p-3">
-                        <h2 className="mb-2">
-
-                          {t("Vank.Transaction.VankPay.Send.2FAValidation.Help.TextInfo")}:
-
-                        </h2>
-                        <ul className="list-disc flex flex-col items-center justify-center space-y-2">
-                          <li className="list-color">
-
-                            {t("Vank.Transaction.VankPay.Send.2FAValidation.Help.TextPoint1")}.
-                          </li>
-                          <li className="list-color">
-                            {t("Vank.Transaction.VankPay.Send.2FAValidation.Help.TextPoint2")}.
-                          </li>
-                          <li className="list-color">
-                            {t("Vank.Transaction.VankPay.Send.2FAValidation.Help.TextPoint3")}.
-                          </li>
-                          <li className="list-color">
-                            {t("Vank.Transaction.VankPay.Send.2FAValidation.Help.TextPoint4")}.
-                          </li>
-                        </ul>
-                      </div>
-                    </CustomTooltip>
-                    {/* <Tooltip anchorSelect="#my-anchor-element" place="right">
-               
-              </Tooltip> */}
-                  </div>
-                  {count === 0 ? (
-                    <p
-                      className={`text-right  text-[--yellow] text-[13px] sm:text-sm font-normal leading-[18.2px] cursor-pointer `}
-                      onClick={generateSecurityCode}
-                    >
-                      {t("Auth.login.Otp.resendCode")}
-                    </p>
-                  ) : (
-                    <span className="text-[13px] sm:text-sm text-white font-normal">
-                      {t("Auth.login.Otp.resend")} {count}s
-                    </span>
+          <div className=" h-full flex flex-col justify-between">
+            {activeTabIndex != 2 ? (
+              <div className="flex flex-col justify-between ">
+                <p className=" space-y-7 mb-5 w-full sm:w-[514px]  sm:text-base text-[#EFF0F1] leading-[20.8px] max-2xl:text-[16px] max-xl:text-[14px]  2xl:text-[16px] xl:max-2xl:text-sm">
+                  {activeTabIndex == 0 && (
+                    <>
+                      {t("Auth.login.Otp.thecodebesend")}{" "}
+                      <span className="text-[#FAE100]">
+                        {" "}
+                        vank******@*****.com
+                      </span>
+                    </>
                   )}
-                </div>
-              </div>
-            </>
-          ) : (
-            <div className="flex justify-center gap-10 items-center h-full py-5  w-full text-[16px] ">
-              <div className="w-[212px] h-[213px]">
-                <img src={codigoQR} alt="" />
-              </div>
 
-              <div className="w-[275px] h-full flex flex-col justify-between pt-2">
-                <p className="font-normal text-[16px] leading-[20.8px]">
-                  {t("Vank.Transaction.VankPay.Send.2FAValidation.Authy.TextOpenQR")}
+                  {activeTabIndex == 1 && (
+                    <>
+                      {t("Vank.Transaction.VankPay.Send.2FAValidation.TextViaPhone")}
+                      <span className="text-body font-bold  ">
+                        {" "}
+                        SMS to +1 *** *** *465
+                      </span>
+                    </>
+                  )}
                 </p>
 
-                <div className="h-[81px] flex flex-col justify-center items-start gap-[24px] text-[90%]">
-                  <p className=" ">
-                    {t("Vank.Transaction.VankPay.Send.2FAValidation.Authy.TextExpires")}
-                  </p>
-                  {t("Vank.Transaction.VankPay.Send.2FAValidation.Authy.TextProblemsQR")}
+                <p className=" mb-5 w-[514px]  sm:text-base  text-[#EFF0F1] leading-[20.8px] max-2xl:text-[16px] max-xl:text-[14px]  2xl:text-[16px] xl:max-2xl:text-sm">
+                  {t("Auth.login.Otp.securityDigits")}
+                </p>
+
+                <div className="relative flex flex-col w-full  mb-3">
+                  {otp.join("") === code && <p className="absolute -top-8 z-50 right-3 text-[#FAE100] text-[15px] font-normal">valid ✓</p>}
+                  <CustomInputOtp
+                    className="mb-4 w-full"
+                    length={6}
+                    otp={otp}
+                    setOtp={setOtp}
+                    fieldValidity={fieldValidity}
+                    setFieldValidity={setFieldValidity}
+                  />
+                  <div className="w-full flex justify-between items-center  ">
+                    <div className="flex items-center justify-center gap-y-1">
+                      <p className="text-right  text-[--text-body] text-[13px] sm:text-sm font-normal leading-[18.2px] cursor-pointer xl:max-2xl:text-[13px]">
+                        {t("Vank.Transaction.VankPay.Send.2FAValidation.DescriptionNotReciveTheCode")}?
+                      </p>
+                      <InfoIcon
+                        id="my-anchor-element"
+                        className="cursor-pointer"
+                      />
+                      <CustomTooltip
+                        anchorSelect="#my-anchor-element"
+                        place="right"
+                        style={{
+                          backgroundColor: "var(--dark-gray)",
+                          color: "#fff",
+                          padding: "10px",
+                          borderRadius: "5px",
+                          opacity: 1,
+                          border: "2px solid #fff",
+                          zIndex: 1,
+                        }}
+                      >
+                        <div className="w-[320px] p-3">
+                          <h2 className="mb-2">
+
+                            {t("Vank.Transaction.VankPay.Send.2FAValidation.Help.TextInfo")}:
+
+                          </h2>
+                          <ul className="list-disc flex flex-col items-center justify-center space-y-2">
+                            <li className="list-color">
+
+                              {t("Vank.Transaction.VankPay.Send.2FAValidation.Help.TextPoint1")}.
+                            </li>
+                            <li className="list-color">
+                              {t("Vank.Transaction.VankPay.Send.2FAValidation.Help.TextPoint2")}.
+                            </li>
+                            <li className="list-color">
+                              {t("Vank.Transaction.VankPay.Send.2FAValidation.Help.TextPoint3")}.
+                            </li>
+                            <li className="list-color">
+                              {t("Vank.Transaction.VankPay.Send.2FAValidation.Help.TextPoint4")}.
+                            </li>
+                          </ul>
+                        </div>
+                      </CustomTooltip>
+                      {/* <Tooltip anchorSelect="#my-anchor-element" place="right">
+               
+              </Tooltip> */}
+                    </div>
+                    {count === 0 ? (
+                      <p
+                        className={`text-right  text-[--yellow] text-[13px] sm:text-sm font-normal leading-[18.2px] cursor-pointer xl:max-2xl:text-[13px]`}
+                        onClick={generateSecurityCode}
+                      >
+                        {t("Auth.login.Otp.resendCode")}
+                      </p>
+                    ) : (
+                      <span className="text-[13px] sm:text-sm text-white font-normal">
+                        {t("Auth.login.Otp.resend")} {count}s
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+              </div>
+
+            ) : (
+              <div>
+                <div className="flex justify-center gap-x-10  h-full  w-full text-[16px] ">
+                  <div className="w-[212px] h-full ">
+                    <img src={codigoQR} alt="" />
+                  </div>
+
+                  <div className="w-[275px]  flex flex-col justify-between  xl:max-2xl:text-[14px] h-full">
+
+                    <div>
+                      <p className="font-normal  leading-[20.8px] ">
+                        {t("Vank.Transaction.VankPay.Send.2FAValidation.Authy.TextOpenQR")}
+                      </p>
+                    </div>
+
+                    <div className="h-[81px] flex flex-col justify-center items-start gap-[24px] text-[90%]">
+                      <p className=" ">
+                        {t("Vank.Transaction.VankPay.Send.2FAValidation.Authy.TextExpires")}
+                      </p>
+                      {t("Vank.Transaction.VankPay.Send.2FAValidation.Authy.TextProblemsQR")}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
+            )}
 
+          </div>
           {/* </div> */}
         </div>
 

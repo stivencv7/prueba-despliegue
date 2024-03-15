@@ -61,9 +61,9 @@ export const TransactioResume = ({
   }, []);
 
   return (
-    <div className="responsi-transaction-resume-main  2xl:w-full  h-full flex flex-col gap-[32px]">
+    <div className="responsi-transaction-resume-main  2xl:w-full  h-full flex flex-col gap-[32px] ">
       {continu == 1 && (
-        <div className="responsi-transaction-resume-main2 flex flex-col h-full gap-y-5  2xl:gap-[22.7392px]  max-lg:justify-between 2xl:justify-between bg-black">
+        <div className="responsi-transaction-resume-main2 flex flex-col h-full gap-y-5  2xl:gap-[22.7392px]  max-lg:justify-between 2xl:justify-between ">
 
           <h1 className="responsive-text text-[#EFF0F1] font-bold  leading-[20.8px]  xl:max-2xl:text-sm ">
             Transaction Resume
