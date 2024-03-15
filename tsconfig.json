@@ -23,7 +23,7 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler", // Especifica el algoritmo de resolución de módulos a utilizar. En este caso, se está utilizando un algoritmo de resolución de módulos basado en un "bundler" (empaquetador).
-    "allowImportingTsExtensions": true, // Habilita la importación de archivos TypeScript (*.ts) en lugar de archivos JavaScript (*.js) directamente.
+    "allowImportingTsExtensions": false, // Habilita la importación de archivos TypeScript (*.ts) en lugar de archivos JavaScript (*.js) directamente.
     "resolveJsonModule": true, //Habilita la resolución de módulos para archivos JSON.
     "isolatedModules": true, // Habilita la compilación independiente de módulos, lo que permite la generación de archivos .d.ts para cada módulo.
     "noEmit": false, //Evita la emisión de archivos JavaScript durante el proceso de compilación.
