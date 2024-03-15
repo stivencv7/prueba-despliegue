@@ -141,7 +141,7 @@ export const Modal = ({
                 <p>{data?.TO_EMAIL}</p>
               </div>
 
-              <div className="responsi-transaction-resume-border h-[6px]  pb-[10px] border-b-[1px] border-[#5E6061] "></div>
+              <div className="responsi-transaction-resume-border h-[6px]  pb-[10px] border-b-[1px] border-[#5E6061] xl:max-2xl:border-0"></div>
             </div>
           </div>
         }

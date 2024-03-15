@@ -189,9 +189,9 @@ export const Validation2FA = ({ retur, back, data }: { retur?: any; back?: any; 
               );
             })}
           </ul>
-          <div className=" h-full flex flex-col justify-between">
+          <div className=" h-full flex flex-col justify-between ">
             {activeTabIndex != 2 ? (
-              <div className="flex flex-col justify-between ">
+              <div className="flex flex-col justify-between h-full">
                 <p className=" space-y-7 mb-5 w-full sm:w-[514px]  sm:text-base text-[#EFF0F1] leading-[20.8px] max-2xl:text-[16px] max-xl:text-[14px]  2xl:text-[16px] xl:max-2xl:text-sm">
                   {activeTabIndex == 0 && (
                     <>
